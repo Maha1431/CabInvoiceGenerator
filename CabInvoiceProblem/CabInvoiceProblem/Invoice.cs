@@ -1,20 +1,38 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace CabInvoiceProblem
+﻿namespace CabInvoiceProblem
 {
-   public  class Invoice
+    public class Invoice
     {
+        const int COST_PER_KILOMETER = 10;
+        const int COST_PER_MINUTE = 1;
+        const int MINIMUM_FARE = 5;
         public double CalculateFare(double distance, int time)
         {
-            int costPerKilometer = 10;
-            int costPerMinute = 1;
-            int minimumFare = 5;
-            double totalFare = distance * costPerKilometer + time * costPerMinute;
-            if (totalFare < minimumFare)
-                return minimumFare;
+            double totalFare = distance * COST_PER_KILOMETER + time * COST_PER_MINUTE;
+            if (totalFare < MINIMUM_FARE)
+                return MINIMUM_FARE;
             return totalFare;
+
+        }
+        public double CalculateMultipleFare(Summary[] rides)
+        {
+            double totalFare = 0;
+            foreach (Summary ride in rides)
+            {
+                totalFare += this.CalculateFare(ride.distance, ride.time);
+            }
+            return totalFare;
+        }
+        public double CalculateMultipleFareRidesSummary(Summary[] rides)
+        {
+            double totalFare = 0;
+            int numberOfRides = 0;
+            foreach (Summary ride in rides)
+            {
+                totalFare += CalculateFare(ride.distance, ride.time);
+                numberOfRides += 1;
+            }
+            EnhancedInvoice invoiceSummary = new EnhancedInvoice(numberOfRides, totalFare);
+            return invoiceSummary.averageFarePerRide;
         }
     }
 }

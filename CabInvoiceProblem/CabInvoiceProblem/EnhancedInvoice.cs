@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace CabInvoiceProblem
+﻿namespace CabInvoiceProblem
 {
-  public  class EnhancedInvoice
+    public class EnhancedInvoice
     {
         public EnhancedInvoice(int numberOfRides, double totalFare)
         {
@@ -18,4 +14,4 @@ namespace CabInvoiceProblem
         public double averageFarePerRide { get; }
     }
 }
-}
+

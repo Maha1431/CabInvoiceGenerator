@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace CabInvoiceProblem
+﻿namespace CabInvoiceProblem
 {
-   public class Summary
+    public class Summary
     {
         public double distance;
         public int time;
@@ -14,5 +10,15 @@ namespace CabInvoiceProblem
             this.distance = distance;
             this.time = time;
         }
+        /*public double distance;
+        public int time;
+        public PremiumRide rideType;
+
+        public Summary(double distance, int time, PremiumRide rideType)
+        {
+            this.distance = distance;
+            this.time = time;
+            this.rideType = rideType;
+        }*/
     }
 }

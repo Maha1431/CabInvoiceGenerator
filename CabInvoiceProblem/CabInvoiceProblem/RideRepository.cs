@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace CabInvoiceProblem
 {
-   public  class RideRepository
+    public class RideRepository
     {
         public Dictionary<string, List<Summary>> userRideObject;
 
@@ -25,5 +23,9 @@ namespace CabInvoiceProblem
                 userRideObject.Add(UserID, list);
             }
         }
+       // public Summary[] GetRides(string userId)
+       // {
+          //  return userRide[userId].ToArray();
+        //}
     }
 }
