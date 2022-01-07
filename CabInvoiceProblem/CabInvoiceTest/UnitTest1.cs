@@ -23,17 +23,17 @@ namespace CabInvoiceTest
         [TestMethod]
         public void GivenMultipleRides_ThenCalculateFare_ShouldReturnTotalFare()
         {
-            Summary[] rides = { new Summary(2.0, 5), new Summary(3.0, 6) };
+            Summary[] rides = { new Summary(5.0, 5), new Summary(2.0, 3) };
             double fare = invoice.CalculateMultipleFare(rides);
-            //Assert.AreEqual(61.0, fare);
+            //Assert.AreEqual(78.0, fare);
         }
         [TestMethod]
         public void GivenMultipleRides_ThenCalculateFare_ShouldReturnInvoiceSummary()
         {
             Invoice invoice = new Invoice();
-            Summary[] rides = { new Summary(2.0, 5), new Summary(3.0, 6) };
+            Summary[] rides = { new Summary(5.0, 5), new Summary(2.0, 2) };
             double invoiceSummary = invoice.CalculateMultipleFare(rides);
-            EnhancedInvoice expected = new EnhancedInvoice(2, 61);
+            EnhancedInvoice expected = new EnhancedInvoice(2, 78);
             object.Equals(expected, invoiceSummary);
         }
         [TestMethod]
